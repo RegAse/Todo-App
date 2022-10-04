@@ -1,32 +1,5 @@
 import React from 'react';
 
-class SpecialEffect extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = { positionInfo: {}, items: []}
-    }
-
-    componentDidMount() {
-        console.log("LEfT:" + this.state.positionInfo.left + ", Top: " + this.state.positionInfo.top);
-        for (let i = 0; i < 50; i++) {
-            this.state.items.push({left: this.state.positionInfo.left + Math.random() * 100 + "px", top: this.state.positionInfo.top - Math.random() * 20 + "px" });
-        }
-
-        this.setState({ items: this.state.items })
-    }
-
-    render() {
-        return (
-            <div ref={el => { if(!el) return; this.state.positionInfo = el.getBoundingClientRect();}}>
-                {this.state.items.map(item => (
-                    <div className='box' style={{ left: item.left, top: item.top }}></div>
-                ))}
-            </div>
-        );
-    }
-}
-
 class TaskList extends React.Component {
     constructor(props) {
         super(props);
@@ -80,7 +53,6 @@ class TaskList extends React.Component {
                                 <div className='col-sm-12' onMouseOver={this.handleHover}>
                                     <div className='tasklist-item'>
                                         <h6>{ task.title }</h6>
-                                        {/* <SpecialEffect/> */}
                                     </div>
                                 </div>
                             ))

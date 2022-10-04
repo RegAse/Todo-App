@@ -19,9 +19,9 @@ class TaskApp extends React.Component {
         ],
         currentTheme: 0,
         themes: [
-            { ID: 0, title: "Dark", previewImage:"/images/theme-0.png",  backgroundColor: "#1e2129", tasklistBackground: "#293642", taskBackgroundColor: "#222F3B" },
-            { ID: 1, title: "Blue", previewImage:"/images/theme-1.png", backgroundColor: "rgb(25, 38, 49)", tasklistBackground: "rgb(28, 51, 70)",     taskBackgroundColor: "rgb(40, 67, 89)" },
-            { ID: 2, title: "Light",previewImage:"/images/theme-2.png", backgroundColor: "#c1c1c1", tasklistBackground: "rgb(28, 51, 70)",     taskBackgroundColor: "rgb(40, 67, 89)" },
+            { ID: 0, title: "Dark", previewImage:"/images/theme-0.png", backgroundColor: "#1e2129", tasklistBackground: "#293642", taskBackgroundColor: "#222F3B" },
+            { ID: 1, title: "Blue", previewImage:"/images/theme-1.png", backgroundColor: "rgb(25, 38, 49)", tasklistBackground: "rgb(28, 51, 70)", taskBackgroundColor: "rgb(40, 67, 89)" },
+            { ID: 2, title: "Light",previewImage:"/images/theme-2.png", backgroundColor: "#c1c1c1", tasklistBackground: "rgb(54, 71, 104)", taskBackgroundColor: "rgb(43, 57, 83)" },
         ]
         };
 
@@ -29,12 +29,10 @@ class TaskApp extends React.Component {
     }
 
     componentDidMount() {
-        console.log("UPDATE!!!");
         this.setTheme(this.state.currentTheme);
     }
 
     componentDidUpdate() {
-        console.log("UPDATE!!!");
         this.setTheme(this.state.currentTheme);
     }
 
@@ -91,7 +89,7 @@ class TaskApp extends React.Component {
                     </div>
                 </div>
 
-                <div className='theme-selector'>
+                <div className='d-none d-md-block theme-selector'>
                     <div className='row'>
                     {
                         this.state.themes.map(theme => (
